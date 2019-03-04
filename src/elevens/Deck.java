@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 //make a Deck class
-public Deck{
+public class Deck{
 	public static final int NUMCARDS = 52;
 	public static String[] SUITS = "CLUBS HEARTS DIAMONDS SPADES".split(" ");
 	
@@ -25,11 +25,28 @@ public Deck{
    		//loop through all faces 1 to 13
    			//add a new TwentyOneCard to the deck
 
+   public Deck(){
+       cards = new ArrayList<Card>();
+       top = 51;
+       for (String s: SUITS){
+           for (int i = 1; i<14; i++){
+               cards.add(new Card(s, i));
+           }
+       }
+}
    
+   public Card dealCard(){
+       top = top-1;
+       return(cards.get(top+1));
+   }
    //make a dealCard() method that returns the top card
    
    //write a shuffle() method
    	//use Colletions.shuffle
    	//reset the top card
+   public void shuffle(){
+       Collections.shuffle(cards);
+       top = 51;
+   }
 
 }
