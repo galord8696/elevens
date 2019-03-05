@@ -30,7 +30,7 @@ public class Deck{
        top = 51;
        for (String s: SUITS){
            for (int i = 1; i<14; i++){
-               cards.add(new Card(s, i));
+               cards.add(new BlackJackCard(s, i));
            }
        }
 }
